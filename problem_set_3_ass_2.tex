@@ -1,0 +1,105 @@
+\documentclass[english, a4paper, 12pt]{article}
+\input{preamble.tex}
+
+% \numberwithin{equation}{section}
+% \usepackage{tikz-cd}
+
+\title{FYM330 Problem set 3 assignment \# 2}
+\author{}
+\date{2026-05-20}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Derivation of coupling coefficients $a$, $b$, $c$}
+For bottom node
+\begin{align*}
+    J_g(0) &= -\frac{\phi_g(0)}{2} \\
+    J_g(0) &= -D_{g,1} \frac{\phi_{g,1}-\phi_g(0)}{\Delta z/2}
+\end{align*}
+using Fick's law and Marshak boundary conditions.
+
+Equating gives
+\begin{align*}
+    \frac{\phi_g(0)}{2} &= D_{g,1} \frac{\phi_{g,1}-\phi_g(0)}{\Delta z/2} \\
+    &\Leftrightarrow \\
+    \phi_g(0) &= \frac{\frac{2D_{g,1}}{\Delta z}}{\frac{1}{2} + \frac{2D_{g,1}}{\Delta z} } \phi_{g,1} \\
+    &= \frac{1}{1 + \frac{\Delta z}{4D_{g,1}}} \phi_{g,1}
+\end{align*}
+
+Therefore
+\begin{equation}
+    J_g(0) = -\frac{1}{2}\frac{1}{1 + \frac{\Delta z}{4D_{g,1}}} \phi_{g,1}
+\end{equation}
+
+Similarly for top node:
+\begin{align*}
+    J_g(H) &= +\frac{\phi_g(H)}{2} \\
+    J_g(H) &= -D_{g,1} \frac{\phi_{g}(H)-\phi_{g,N}}{\Delta z/2}
+\end{align*}
+
+Equating gives
+\begin{align*}
+    \frac{\phi_g(H)}{2} &= D_{g,N} \frac{\phi_{g,N}-\phi_g(H)}{\Delta z/2} \\
+    &\Leftrightarrow \\
+    \phi_g(H) &= \frac{\frac{2D_{g,N}}{\Delta z}}{\frac{1}{2} + \frac{2D_{g,N}}{\Delta z} } \phi_{g,N} \\
+    &= \frac{1}{1 + \frac{\Delta z}{4D_{g,N}}} \phi_{g,N}
+\end{align*}
+
+Therefore
+\begin{equation}
+    J_g(H) = \frac{1}{2}\frac{1}{1 + \frac{\Delta z}{4D_{g,N}}} \phi_{g,N}
+\end{equation}
+
+Now we can compute
+\begin{align}
+    \frac{\hat{J}_{g,n}-\hat{J}_{g,n-1}}{\Delta z} = \frac{1}{\Delta z}\biggl( 
+    &-\frac{D_{g,n}D_{g,n+1}}{\Delta z/2}\frac{\phi_{g,n+1}-\phi_{g,n}}{D_{g,n}+ D_{g,n+1}} \\
+    &+ \frac{D_{g,n-1}D_{g,n}}{\Delta z/2}\frac{\phi_{g,n}-\phi_{g,n-1}}{D_{g,n-1}+ D_{g,n}}
+    \biggr)\\
+    = \frac{1}{\Delta z}\biggl(
+    &-\frac{D_{g,n}D_{g,n+1}}{\Delta z/2(D_{g,n}+ D_{g,n+1})}\phi_{g,n+1} \\
+    +&\biggl[\frac{D_{g,n}D_{g,n+1}}{\Delta z/2(D_{g,n}+ D_{g,n+1})} + \frac{D_{g,n-1}D_{g,n}}{\Delta z/2(D_{g,n-1}+ D_{g,n})}\biggr]\phi_{g,n} \\
+    &-\frac{D_{g,n-1}D_{g,n}}{\Delta z/2(D_{g,n-1}+ D_{g,n})}\phi_{g,n-1}
+    \biggr)
+\end{align}
+for internal $n$ and for top node:
+\begin{align}
+    \frac{\hat{J}_{g}(H)-\hat{J}_{g,N}}{\Delta z}
+    = \frac{1}{\Delta z}\biggl(
+    &\biggl[\frac{1}{2}\frac{1}{1+\frac{\Delta z}{4D_{g,N}}} + \frac{D_{g,N-1}D_{g,N}}{\Delta z/2(D_{g,N-1}+ D_{g,N})}\biggr]\phi_{g,N} \\
+    &-\frac{D_{g,N-1}D_{g,N}}{\Delta z/2(D_{g,N-1}+ D_{g,N})}\phi_{g,N-1}
+    \biggr)
+\end{align}
+and for bottom node:
+\begin{align}
+    \frac{\hat{J}_{g,1}-\hat{J}_{g}(0)}{\Delta z}
+    = \frac{1}{\Delta z}\biggl(
+    &\biggl[\frac{1}{2}\frac{1}{1+\frac{\Delta z}{4D_{g,1}}} + \frac{D_{g,1}D_{g,2}}{\Delta z/2(D_{g,1}+ D_{g,2})}\biggr]\phi_{g,1} \\
+    &-\frac{D_{g,1}D_{g,2}}{\Delta z/2(D_{g,1}+ D_{g,2})}\phi_{g,2}
+    \biggr)
+\end{align}
+
+Therefore, by matching the coefficients in front of $\phi_{g,n-1}$, $\phi_{g,n}$, and $\phi_{g,n+1}$ we get that
+\begin{align}
+    a_n &= \begin{cases}
+        \frac{1}{2\Delta z}\frac{1}{1+\frac{\Delta z}{4D_{g,1}}} + \frac{2D_{g,1}D_{g,2}}{(\Delta z)^2(D_{g,1}+ D_{g,2})}, &n=1\\
+        \frac{2D_{g,n}D_{g,n+1}}{(\Delta z)^2(D_{g,n}+ D_{g,n+1})} + \frac{2D_{g,n-1}D_{g,n}}{(\Delta z)^2(D_{g,n-1}+ D_{g,n})}, & n=2,3,\dots,N-1\\
+        \frac{1}{2\Delta z}\frac{1}{1+\frac{\Delta z}{4D_{g,N}}} + \frac{2D_{g,N-1}D_{g,N}}{(\Delta z)^2(D_{g,N-1}+ D_{g,N})}, &n=N
+    \end{cases} \\
+    b_n &= \begin{cases}
+        % -\frac{2D_{g,1}D_{g,2}}{(\Delta z)^2(D_{g,1}+ D_{g,2})}, &n=1\\
+        -\frac{2D_{g,n}D_{g,n+1}}{(\Delta z)^2 (D_{g,n}+D_{g,n+1})}, &n=1,2,\dots,N-1\\
+        0, &n=N
+    \end{cases} \\
+    c_n &= \begin{cases}
+        0, &n=1\\
+        -\frac{2D_{g,n-1}D_{g,n}}{(\Delta z)^2 (D_{g,n-1}+D_{g,n})}, &n=2,3,\dots,N\\
+        % -\frac{2(D_{g,N-1}D_{g,N})}{(\Delta z)^2(D_{g,N-1}+D_{g,N})}, &n=N
+    \end{cases}
+\end{align}
+
+
+\end{document}
