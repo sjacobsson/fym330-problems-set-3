@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber problems_set_3_ass_1"] 1779090946.80005 "problems_set_3_ass_1.bcf" "problems_set_3_ass_1.bbl" "problems_set_3_ass_1" 1780139530.20916 0
+["biber problems_set_3_ass_1"] 1779090946.80005 "problems_set_3_ass_1.bcf" "problems_set_3_ass_1.bbl" "problems_set_3_ass_1" 1780139818.62552 0
   "bibliography.bib" 0 -1 0 ""
   "problems_set_3_ass_1.bcf" 0 -1 0 "pdflatex"
   (generated)
   "problems_set_3_ass_1.bbl"
   "problems_set_3_ass_1.blg"
   (rewritten before read)
-["pdflatex"] 1780139528.74152 "problems_set_3_ass_1.tex" "problems_set_3_ass_1.pdf" "problems_set_3_ass_1" 1780139530.20948 0
+["pdflatex"] 1780139817.15716 "problems_set_3_ass_1.tex" "problems_set_3_ass_1.pdf" "problems_set_3_ass_1" 1780139818.62584 0
   "/etc/texmf/web2c/texmf.cnf" 1769430737.89006 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -209,11 +209,11 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769494791 3348446 6ee76e621ab86b6324503f3e91451fb1 ""
   "geometry.pdf" 1780137581.28565 47954 a0009b5385ef67821034be38b0496863 ""
   "preamble.tex" 1778075864.41187 8730 27cc358711f8b19df6e8f1464f70c31b ""
-  "problems_set_3_ass_1.aux" 1780139529.99045 1236 6439b0c7ab6b7b67abe8dbcb61548636 "pdflatex"
+  "problems_set_3_ass_1.aux" 1780139818.41314 1236 6439b0c7ab6b7b67abe8dbcb61548636 "pdflatex"
   "problems_set_3_ass_1.bbl" 0 -1 0 "biber problems_set_3_ass_1"
-  "problems_set_3_ass_1.out" 1780139530.00245 314 fadea0f79acb9cb4dca795b4541f77e3 "pdflatex"
-  "problems_set_3_ass_1.run.xml" 1780139530.00645 2425 ce1209685dc6a15aa8eeac6cb6afbe4d "pdflatex"
-  "problems_set_3_ass_1.tex" 1780139528.09446 2639 c923dc356822737f33566c75e4a815a9 ""
+  "problems_set_3_ass_1.out" 1780139818.42114 314 fadea0f79acb9cb4dca795b4541f77e3 "pdflatex"
+  "problems_set_3_ass_1.run.xml" 1780139818.42514 2425 ce1209685dc6a15aa8eeac6cb6afbe4d "pdflatex"
+  "problems_set_3_ass_1.tex" 1780139816.38915 2668 517dbdde6489e844bb71d0093f935a3d ""
   (generated)
   "problems_set_3_ass_1.aux"
   "problems_set_3_ass_1.bcf"
