@@ -20,50 +20,60 @@
 
 \begin{document}
 \begin{tikzpicture}[even odd rule]
-	\def\r{1.8cm}
-	\def\R{1.5cm}
+	\def\r{1.4cm} % fuel pellet outer raius
+	\def\rr{1.6cm} % cladding inner radius
+	\def\rrr{1.8cm} % cladding outer radius
     \coordinate (O1) at (0, 0.866 * 3 * \r) {}; 
     \coordinate (O2) at (-0.5 * 3 * \r, 0 * 3 * \r) {}; 
     \coordinate (O3) at (0.5 * 3 * \r, 0 * 3 * \r) {}; 
 
     \draw [dashed] (O1) circle (\r);
-    \draw [dashed] (O2) circle (\r);
-    \draw [dashed] (O3) circle (\r);
+    \draw [dashed] (O1) circle (\rr);
+    \draw [dashed] (O1) circle (\rrr);
 
-    \draw [dashed] (O1) circle (\R);
-    \draw [dashed] (O2) circle (\R);
-    \draw [dashed] (O3) circle (\R);
+    \draw [dashed] (O2) circle (\r);
+    \draw [dashed] (O2) circle (\rr);
+    \draw [dashed] (O2) circle (\rrr);
+
+    \draw [dashed] (O3) circle (\r);
+    \draw [dashed] (O3) circle (\rr);
+    \draw [dashed] (O3) circle (\rrr);
 
 	\begin{scope}
     	\clip (O3) -- (O2) -- (O1);
-    	\fill [color=blue!40!white] (0, 0) circle (2 * \r);
+    	\fill [color=blue!40!white] (0, 0) circle (2 * \rrr);
 
-    	\fill [color=lightgray] (O1) circle (\r);
-    	\fill [color=gray] (O1) circle (\R);
-    	\draw [color=red, line width=0.75] (O1) circle (\r);
-    	\fill [color=lightgray] (O2) circle (\r);
-    	\fill [color=gray] (O2) circle (\R);
-    	\draw [color=red, line width=0.75](O2) circle (\r);
-    	\fill [color=lightgray] (O3) circle (\r);
-    	\fill [color=gray] (O3) circle (\R);
-    	\draw [color=red, line width=0.75](O3) circle (\r);
+    	\fill [color=lightgray] (O1) circle (\rrr);
+    	\fill [color=white] (O1) circle (\rr);
+    	\fill [color=gray] (O1) circle (\r);
+    	\draw [color=red, line width=1.0] (O1) circle (\rrr);
+
+    	\fill [color=lightgray] (O2) circle (\rrr);
+    	\fill [color=white] (O2) circle (\rr);
+    	\fill [color=gray] (O2) circle (\r);
+    	\draw [color=red, line width=1.0] (O2) circle (\rrr);
+
+    	\fill [color=lightgray] (O3) circle (\rrr);
+    	\fill [color=white] (O3) circle (\rr);
+    	\fill [color=gray] (O3) circle (\r);
+    	\draw [color=red, line width=1.0] (O3) circle (\rrr);
 	\end{scope}
 
 	\draw (O1) -- (O2) -- (O3) -- (O1);
 
-	\draw[color=blue, <->, line width=0.75] ($(O3) + (0, 0)$) -- ($(O3) + (\r, 0)$);
-	\draw[color=cyan, <->, line width=0.75] ($(O3) + (0, -0.1 * \r)$) -- ($(O3) + (\R, -0.1 * \r)$);
+	\draw[color=blue, <->, line width=1.0] ($(O3) + (0, 0)$) -- ($(O3) + (\r, 0)$);
+	\draw[color=cyan, <->, line width=1.0] ($(O3) + (0, -0.1 * \r)$) -- ($(O3) + (\rr, -0.1 * \r)$);
+	\draw[color=teal, <->, line width=1.0] ($(O3) + (0, -0.2 * \r)$) -- ($(O3) + (\rrr, -0.2 * \r)$);
 
-	\node[draw,align=left] at (3 * \r, 2.5 * \r) {
+	\node[draw,align=left] at (3.5 * \r, 3.0 * \r) {
 		{\color{gray}$\blacksquare$} inner cladding\\
 		{\color{lightgray}$\blacksquare$} outer cladding\\
 		{\color{blue!40!white}$\blacksquare$} flow area $A$\\
 		{\color{red}$\boldsymbol{-}$} wetted perimeter $P_{\textrm{W}}$\\
-		{\color{blue}$\boldsymbol{\leftrightarrow}$} cladding inner radius $R_{\textrm{ci}}$\\
-		{\color{cyan}$\boldsymbol{\leftrightarrow}$} cladding outer radius $R_{\textrm{co}}$\\
+		{\color{blue}$\boldsymbol{\leftrightarrow}$} fuel pellet outer radius $R_{\textrm{fo}}$\\
+		{\color{cyan}$\boldsymbol{\leftrightarrow}$} cladding inner radius $R_{\textrm{ci}}$\\
+		{\color{teal}$\boldsymbol{\leftrightarrow}$} cladding outer radius $R_{\textrm{co}}$\\
 		};
-
-
 
 \end{tikzpicture}
 \end{document}

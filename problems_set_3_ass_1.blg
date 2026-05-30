@@ -1,0 +1,9 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'problems_set_3_ass_1.blg'
+[201] biber:340> INFO - === Mon May 18, 2026, 09:55:48
+[230] Biber.pm:420> INFO - Reading 'problems_set_3_ass_1.bcf'
+[324] Biber.pm:994> INFO - Found 0 citekeys in bib section 0
+[346] bbl.pm:676> INFO - Writing 'problems_set_3_ass_1.bbl' with encoding 'UTF-8'
+[346] bbl.pm:779> INFO - Output to problems_set_3_ass_1.bbl
+[346] Biber.pm:131> WARN - The file 'problems_set_3_ass_1.bcf' does not contain any citations!
+[346] Biber.pm:133> INFO - WARNINGS: 1

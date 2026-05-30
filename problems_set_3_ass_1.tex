@@ -13,6 +13,75 @@
 
 \maketitle
 
+\section{Calculation of additional data from the input data}%
+\label{sec:Calculation of additional data from the input data}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics{geometry.pdf}
+	\caption{Geometry of the reactor.
+	Our finite volume is the part with color.}
+	\label{fig:geometry}
+\end{figure}
+
+In \cref{fig:geometry}, we identify the wetted perimeter, marked in red, as half of the outer perimeter of a fuel rod.
+Concretely, we get
+\begin{align}
+	P_{\textrm{W}} = \frac{2 \pi}{2} R_{\textrm{co}} = \pi R_{\textrm{co}}.
+\end{align}
+The flow area is the area of the entire triangle minus the area occupied by the cladding, which is half the area of an entire fuel rod.
+We get
+\begin{align}
+	A = \frac{\sqrt{3}}{4} p^{2} - \frac{\pi}{2} R_{\mathrm{co}}^{2}.
+\end{align}
+The area enclosed by a circle with perimeter $s$ is $s^{2} / (4 \pi)$.
+The equivalent hydralic diameter thus solves the equation
+\begin{align}
+	\frac{(\pi D_{\textrm{e}})^{2} / (4 \pi)}{\pi D_{\textrm{e}}} = \frac{A}{P_{\textrm{W}}}\\
+	D_{\textrm{e}} / 4 = \frac{A}{P_{\textrm{W}}}\\
+	D_{\textrm{e}}= \frac{4 A}{P_{\textrm{W}}}.
+\end{align}
+
+The height $DZ$ of the axial node solves $DZ \cdot NZ = H$, where $H$ is the height of the channel.
+Hence
+\begin{align}
+	DZ = \frac{H}{NZ}.
+\end{align}
+The positions $r_{i}$ of the $NZ$ equisurface regions solve the difference equation
+\begin{align}
+	r_{0} ={}& 0\\
+	r_{2 NZ} ={}& R_{\textrm{fo}}\\
+	r_{2 NZ + 2} ={}& R_{\textrm{ci}}\\
+	r_{2 NZ + 4} ={}& R_{\textrm{co}}\\
+	\pi r_{i}^2 - \pi r_{i - 1}^{2} ={}& \pi r_{i + 1}^2 - \pi r_{i}^{2} \textrm{ for all other $i$}.
+\end{align}
+We rewrite the last equality to
+\begin{align}
+	r_{i}^2 = \frac{r_{i + 1}^2 + r_{i - 1}^{2}}{2}
+\end{align}
+and note that the sequence $(r_{i}^{2})_{i = 1}^{2 NZ}$ is equispaced.
+Thus $r_{i}^{2} = \frac{i}{2 NZ} R_{\textrm{fo}}^{2}$, and so
+\begin{align}
+	r_{i} ={}& \sqrt{\frac{i}{2 NZ}} R_{\textrm{fo}}\\
+	r_{2 NZ} ={}& R_{\textrm{fo}}\\
+	r_{2 NZ + 1} ={}& \sqrt{R_{\textrm{fo}}^{2} + R_{\textrm{ci}}^{2}}\\
+	r_{2 NZ + 2} ={}& R_{\textrm{ci}}\\
+	r_{2 NZ + 3} ={}& \sqrt{R_{\textrm{ci}}^{2} + R_{\textrm{co}}^{2}}\\
+	r_{2 NZ + 4} ={}& R_{\textrm{co}}.
+\end{align}
+The corresponding perimeters are
+\begin{align}
+	S_{i} = 2 \pi r_{i},
+\end{align}
+and the corresponding surfaces are
+\begin{align}
+	V_{1} ={}& \pi r_{1}^{2}\\
+	V_{i} ={}& \pi r_{i}^{2} - \pi r_{i - 1}^{2}.
+\end{align}
+
+
+
+
 
 
 \end{document}
